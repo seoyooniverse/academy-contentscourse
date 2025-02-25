@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홈페이지 메인</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        .background-container {
+            position: relative;
+            width: 100%;
+            height: 955px;
+            max-width: 1440px;
+            margin: 0 auto;
+            background-image: url('https://res.cloudinary.com/dv1qcgslp/image/upload/v1740493072/Desktop_-_1_1_npeyee.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .content-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 5%;
+            position: absolute;
+            bottom: 12%; /* 하단에서 더 낮게 배치 */
+        }
+        
+        .content-image {
+            max-width: 22%; /* 이미지 크기 조정 (20%에서 22%로 변경) */
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+        
+        .content-image:hover {
+            transform: scale(1.05);
+        }
+        
+        /* 태블릿 디자인 */
+        @media (max-width: 1024px) {
+            .background-container {
+                height: auto;
+                min-height: 700px;
+            }
+            
+            .content-container {
+                width: 95%;
+                bottom: 15%;
+            }
+            
+            .content-image {
+                max-width: 28%;
+            }
+        }
+        
+        /* 모바일 디자인 */
+        @media (max-width: 768px) {
+            .background-container {
+                height: auto;
+                min-height: 100vh;
+                background-size: cover;
+                background-position: center top;
+            }
+            
+            .content-container {
+                flex-direction: column;
+                width: 90%;
+                position: relative;
+                bottom: auto;
+                margin-top: 65vh; /* 모바일에서는 상단에서 약 65% 아래에 배치 */
+                gap: 20px;
+            }
+            
+            .content-image {
+                max-width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+        
+        /* 작은 모바일 디자인 */
+        @media (max-width: 480px) {
+            .content-container {
+                margin-top: 30px;
+            }
+            
+            .content-image {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <div class="content-container">
+            <img src="https://res.cloudinary.com/dv1qcgslp/image/upload/v1740490385/_%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%86%AB%E1%84%8E%E1%85%B3_%E1%84%80%E1%85%B5%E1%84%8E%E1%85%A9_vpwunl.png" alt="컨텐츠 기초" class="content-image">
+            <img src="https://res.cloudinary.com/dv1qcgslp/image/upload/v1740490385/%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%86%AB%E1%84%8E%E1%85%B3_%E1%84%89%E1%85%B5%E1%86%AF%E1%84%86%E1%85%AE_vrrvxa.png" alt="컨텐츠 실무" class="content-image">
+            <img src="https://res.cloudinary.com/dv1qcgslp/image/upload/v1740490385/%E1%84%8F%E1%85%A9%E1%86%AB%E1%84%90%E1%85%A6%E1%86%AB%E1%84%8E%E1%85%B3_%E1%84%91%E1%85%B3%E1%84%85%E1%85%A9_gqeuhd.png" alt="컨텐츠 프로" class="content-image">
+        </div>
+    </div>
+</body>
+</html>
