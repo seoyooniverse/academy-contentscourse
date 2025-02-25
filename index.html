@@ -11,12 +11,15 @@
             height: 100%;
             width: 100%;
             overflow-x: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         .background-container {
             position: relative;
             width: 100%;
-            height: 955px;
+            height: 800px; /* 높이를 800픽셀로 고정 */
             max-width: 1440px;
             margin: 0 auto;
             background-image: url('https://res.cloudinary.com/dv1qcgslp/image/upload/v1740493072/Desktop_-_1_1_npeyee.png');
@@ -25,6 +28,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            overflow: hidden; /* 넘치는 부분 잘라냄 */
         }
         
         .content-container {
