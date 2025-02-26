@@ -18,21 +18,24 @@
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%;
             width: 100%;
-            overflow: hidden; /* 스크롤 방지 */
+            height: auto;
+            min-height: 100%;
+            overflow-x: hidden;
         }
 
         .background-container {
             position: relative;
-            width: 100vw;
-            height: 100vh; /* 뷰포트 높이로 설정 */
+            width: 100%;
+            min-height: 100vh;
             background-image: url('https://res.cloudinary.com/dv1qcgslp/image/upload/v1740536416/%E1%84%87%E1%85%A2%E1%84%80%E1%85%A7%E1%86%BC_quxohw.png');
             background-size: cover;
             background-position: center;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: flex-end;
             align-items: center;
+            padding-bottom: 10%;
         }
 
         .content-container {
@@ -42,8 +45,7 @@
             width: 90%;
             max-width: 1200px;
             gap: 5%;
-            position: absolute;
-            bottom: 12%;
+            margin-top: auto;
         }
 
         .content-image {
@@ -59,9 +61,12 @@
 
         /* 태블릿 디자인 */
         @media (max-width: 1024px) {
+            .background-container {
+                padding-bottom: 15%;
+            }
+            
             .content-container {
                 width: 95%;
-                bottom: 15%;
             }
             
             .content-image {
@@ -73,34 +78,66 @@
         @media (max-width: 768px) {
             .background-container {
                 background-image: url('https://res.cloudinary.com/dv1qcgslp/image/upload/v1740540487/%E1%84%86%E1%85%A9%E1%84%87%E1%85%A1%E1%84%8B%E1%85%B5%E1%86%AF_%E1%84%87%E1%85%A2%E1%84%80%E1%85%A7%E1%86%BC_bp4war.png');
+                min-height: 150vh; /* 모바일에서 더 긴 페이지 */
+                background-size: 100% auto;
+                background-repeat: no-repeat;
                 background-position: top center;
-                background-size: cover;
+                justify-content: center;
+                padding-bottom: 0;
             }
             
             .content-container {
                 flex-direction: column;
-                width: 90%;
-                position: relative;
-                bottom: auto;
-                margin-top: 0;
+                width: 80%;
                 gap: 20px;
-                top: 65vh; /* 위에서부터의 위치 조정 */
+                margin-top: 65vh; /* 배경 이미지에 맞춰 조정 */
+                margin-bottom: 10vh;
             }
             
             .content-image {
-                max-width: 80%;
-                margin-bottom: 20px;
+                max-width: 100%;
+                margin-bottom: 15px;
             }
         }
 
-        /* 작은 모바일 디자인 */
-        @media (max-width: 480px) {
+        /* iPhone SE 및 작은 모바일 디자인 */
+        @media (max-width: 375px) {
             .content-container {
-                top: 45vh; /* 더 작은 화면에서는 시작 위치를 좀 더 위로 */
+                margin-top: 55vh;
+            }
+        }
+
+        /* 매우 작은 화면 */
+        @media (max-width: 320px) {
+            .content-container {
+                margin-top: 50vh;
+            }
+        }
+
+        /* 높이가 짧은 화면 */
+        @media (max-height: 700px) and (max-width: 768px) {
+            .background-container {
+                min-height: 180vh; /* 짧은 화면에서 더 긴 페이지 */
+            }
+            
+            .content-container {
+                gap: 15px;
+                margin-top: 50vh;
             }
             
             .content-image {
-                max-width: 85%;
+                margin-bottom: 10px;
+            }
+        }
+
+        /* 높이가 긴 화면 */
+        @media (min-height: 800px) and (max-width: 768px) {
+            .background-container {
+                min-height: 130vh;
+            }
+            
+            .content-container {
+                margin-top: 70vh;
             }
         }
     </style>
