@@ -85,6 +85,7 @@
             .background-container {
                 height: auto;
                 min-height: 100vh;
+                background-image: url('모바일용_배경_이미지_URL'); /* 모바일용 배경 이미지 URL 입력 */
                 background-size: cover;
                 background-position: center top;
             }
@@ -102,16 +103,27 @@
                 max-width: 80%;
                 margin-bottom: 20px;
             }
+        }: 90%;
+                position: relative;
+                bottom: auto;
+                margin-top: 65vh;
+                gap: 20px;
+            }
+            
+            .content-image {
+                max-width: 80%;
+                margin-bottom: 20px;
+            }
         }
 
         /* 작은 모바일 디자인 */
         @media (max-width: 480px) {
             .content-container {
-                margin-top: 55vh;
+                margin-top: 45vh; /* 더 작은 화면에서는 시작 위치를 좀 더 위로 */
             }
             
             .content-image {
-                max-width: 90%;
+                max-width: 85%;
             }
         }
     </style>
